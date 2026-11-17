@@ -353,9 +353,6 @@ img { max-width: 100%; }
 
 .grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
 
-.tips ol { margin: 10px 0 0; padding-left: 22px; color: var(--ink-2); }
-.tips li { margin: 7px 0; }
-
 /* ---------- FAQ ---------- */
 .faq details {
   background: var(--card);
@@ -421,24 +418,6 @@ img { max-width: 100%; }
   border-radius: 12px; border: 1px solid var(--line); background: #fff;
 }
 .qr figcaption { font-size: 13px; color: var(--ink-3); }
-
-/* ---------- 底部 CTA ---------- */
-.cta-band {
-  margin-top: 26px;
-  padding: 46px 28px;
-  border-radius: 20px;
-  text-align: center;
-  color: #fff;
-  background: linear-gradient(135deg, #5B79F5 0%, #3A55D9 100%);
-  box-shadow: var(--shadow);
-}
-
-.cta-band h2 { margin: 0 0 10px; font-size: clamp(21px, 2.6vw, 27px); }
-.cta-band p { margin: 0 0 22px; color: rgba(255, 255, 255, .88); }
-.cta-band .btn {
-  background: #fff; color: var(--brand-dark); border-color: #fff;
-}
-.cta-band .btn:hover { background: #F3F5FF; color: var(--brand-dark); }
 
 /* ---------- footer ---------- */
 .site-footer {
