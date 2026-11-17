@@ -184,9 +184,24 @@ img { max-width: 100%; }
   background: var(--card);
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  padding: 30px 32px;
+  padding: 34px 34px 28px;
   box-shadow: var(--shadow-sm);
+  position: relative;
 }
+
+/* 一个大的引号做装饰：让"信"看起来像信，而不是一段正文 */
+.letter::before {
+  content: "\201C";
+  position: absolute;
+  top: 2px;
+  left: 16px;
+  font: 700 62px/1 Georgia, "Times New Roman", serif;
+  color: color-mix(in srgb, var(--brand) 20%, transparent);
+  pointer-events: none;
+  user-select: none;
+}
+
+.letter-body { position: relative; }
 
 .letter-head {
   display: flex; align-items: center; gap: 14px;
@@ -218,7 +233,13 @@ img { max-width: 100%; }
 .letter-body p:last-child { margin-bottom: 0; }
 .letter-body strong { color: var(--ink); }
 
-.letter-sign { color: var(--ink-3) !important; font-size: 15px !important; }
+.letter-sign {
+  color: var(--ink-3) !important;
+  font-size: 14.5px !important;
+  text-align: right;
+  margin-top: 4px !important;
+  letter-spacing: .02em;
+}
 
 /* ---------- 功能交替图文 ---------- */
 .feature-row {
