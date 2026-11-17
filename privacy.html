@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>隐私权政策 - DeepSeek Mate</title>
+    <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: #f8f9fa;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px 48px;
+            border-radius: 12px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+        }
+        h1 {
+            font-size: 26px;
+            margin-bottom: 8px;
+            color: #1a1a1a;
+        }
+        .updated {
+            color: #888;
+            font-size: 14px;
+            margin-bottom: 32px;
+        }
+        h2 {
+            font-size: 18px;
+            margin-top: 28px;
+            margin-bottom: 10px;
+            color: #1a1a1a;
+        }
+        p { margin-bottom: 12px; }
+        ul { margin-bottom: 12px; padding-left: 20px; }
+        li { margin-bottom: 6px; }
+        strong { color: #1a1a1a; }
+        a { color: #4F6BED; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            font-size: 14px;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>隐私权政策</h1>
+        <p class="updated">最后更新：2026 年 5 月 23 日</p>
+
+        <p>
+            DeepSeek Mate（以下简称"本扩展"）尊重并保护您的隐私。本隐私权政策说明本扩展如何收集、使用和保护您的信息。
+        </p>
+
+        <h2>1. 信息收集</h2>
+        <p>本扩展在您使用过程中会处理以下信息（<strong>全部保存在您本机</strong>，除非下文明确说明）：</p>
+        <ul>
+            <li><strong>对话内容</strong>：当您使用收藏功能时，本扩展会保存您当前对话中的问题与回答内容，存放在浏览器本地（<code>chrome.storage.local</code> / IndexedDB）。</li>
+            <li><strong>历史对话记录</strong>：当您启用「历史对话搜索」时，本扩展会通过 DeepSeek 官方接口获取您在 chat.deepseek.com 上的历史对话记录，仅存放在本机，用于本地搜索。</li>
+            <li><strong>提示词数据</strong>：您自定义的提示词内容，存放在本机。</li>
+            <li><strong>长期记忆</strong>：启用「记忆」功能后，本扩展会让模型从您的对话里提炼关于您的长期信息（例如身份、偏好、正在做的项目、技术栈；<strong>也可能包含您主动提到的身体/健康与生活处境类信息</strong>），存放在本机，用于在后续对话中作为上下文。</li>
+            <li><strong>设置与凭证</strong>：扩展设置；若您自行配置了第三方 LLM API，其中的 API Key 会以<strong>明文</strong>保存在本机 <code>chrome.storage.local</code>（仅本机，不会上传给我们）。</li>
+        </ul>
+
+        <h2>2. 信息使用</h2>
+        <p>本扩展处理的信息仅用于以下目的（均在本机完成，下列需要联网的步骤会明确说明）：</p>
+        <ul>
+            <li>在侧边栏中展示您收藏的对话、历史记录与长期记忆</li>
+            <li>提供本地搜索功能，帮助您快速查找历史对话</li>
+            <li>导出对话为 Markdown / 压缩包</li>
+            <li>创建分享链接（通过 DeepSeek 官方接口）</li>
+            <li><strong>记忆提取</strong>：见第 5 节 —— 这一步会把对话文本发送给模型（DeepSeek 官方接口，或您自行配置的第三方 API）</li>
+            <li><strong>会话分叉 / 会话压缩</strong>：把您选定会话的上下文（压缩时还包括模型生成的摘要）作为新会话的第一条消息发送到 DeepSeek 官方接口</li>
+        </ul>
+
+        <h2>3. 信息共享</h2>
+        <p>
+            本扩展<strong>不会</strong>向任何第三方出售、出租或共享您的个人信息，<strong>不包含</strong>任何分析、广告或追踪代码，也没有自建服务器。
+        </p>
+        <p>唯一会把数据发到本机之外的情形是：</p>
+        <ul>
+            <li><strong>DeepSeek 官方接口</strong>（<code>chat.deepseek.com</code> / <code>api.deepseek.com</code>）：读取您授权访问的历史对话、创建分享链接、发送会话分叉/压缩内容、以及记忆提取时把对话文本交给模型。<strong>这些请求都带着您自己的登录凭证或您自己填的 API Key，直接发给 DeepSeek，不经过我们。</strong></li>
+            <li><strong>您自行配置的第三方 LLM API</strong>（可选，默认关闭）：如果您在设置里填写了 Base URL 与 API Key 并启用，记忆提取等后台任务会改为请求<strong>您指定的那个域名</strong>，发送的内容是该次提取所需的对话文本与现有记忆条目。扩展会在启用时单独申请该域名的访问权限。</li>
+        </ul>
+
+        <h2>4. 数据存储与删除</h2>
+        <p>
+            所有数据均存储在您的浏览器本地（<code>chrome.storage.local</code> 与扩展源的 IndexedDB）。您可以随时：
+        </p>
+        <ul>
+            <li>在侧边栏中删除单条收藏、历史记录或记忆，或使用「清空所有记忆 / 清空所有」</li>
+            <li>在 Chrome 扩展管理页面清除扩展数据，或卸载扩展（会一并清除）</li>
+        </ul>
+        <p><strong>扩展自身创建的临时会话</strong>：记忆提取会在您的 DeepSeek 账号里创建带「【临时】」标记的工作会话，为了避免"建完就删"的脚本特征，它们会先保留、再由扩展分批自动清理（默认保留约 45 分钟后、每 3 分钟最多清理 2 个）。您也可以在列表里自行删除。</p>
+        <p><strong>您自己会话的处理</strong>：会话分叉不会修改原会话；会话压缩会给原会话标题加「压缩前」前缀，并按您的设置决定它是否进入「临时会话」分组（<em>进入该分组意味着约 45 分钟后会被自动删除</em>）或「归档」分组（保留）。默认设置为「不挪动」。</p>
+
+        <h2>5. 数据传输</h2>
+        <p>
+            除第 3 节列出的两类目标（DeepSeek 官方接口、您自行配置的第三方 API）之外，本扩展<strong>不会</strong>把您的数据发送到任何其他服务器；也没有自建后端用于收集数据。所有通信均通过 HTTPS 加密。
+        </p>
+        <p>
+            <strong>记忆提取（默认关闭，需显式开启或手动点击）</strong>会把当次需要的对话文本（与现有记忆条目）交给模型处理。如果您对某段对话的敏感性有顾虑，请不要对它执行提取，或改用本机可控的自建 API。
+        </p>
+        <p>
+            <strong>读取删除请求</strong>：当「历史对话搜索」开启时，扩展会读取 chat.deepseek.com 页面发出的「删除会话」请求（<strong>仅取其中的会话 ID</strong>，不读取正文），用于把本地镜像里对应的会话记录一并移除。关闭该开关后，扩展不会读取页面上的任何请求。
+        </p>
+
+        <h2>6. 权限说明</h2>
+        <p>本扩展申请了以下 Chrome 权限及其用途：</p>
+        <ul>
+            <li><strong>storage</strong>：在本机保存收藏、设置、长期记忆等</li>
+            <li><strong>unlimitedStorage</strong>：历史对话全文索引可能超过默认配额</li>
+            <li><strong>sidePanel</strong>：在浏览器侧边栏展示收藏/搜索/记忆等界面</li>
+            <li><strong>tabs</strong>：找到 chat.deepseek.com 标签页以触发同步、与页面内脚本通信</li>
+            <li><strong>notifications</strong>：收藏成功等操作的本机提醒</li>
+            <li><strong>downloads</strong>：导出 Markdown / 压缩包</li>
+            <li><strong>host_permissions: https://chat.deepseek.com/*</strong>：注入收藏按钮、读取历史对话、发送分叉/压缩内容</li>
+            <li><strong>optional_host_permissions（可选，仅在您启用时申请）</strong>：<code>https://api.deepseek.com/*</code> 用于官方 API 通道；<code>https://*/*</code> / <code>http://*/*</code> 用于您自行填写的第三方 API 域名</li>
+        </ul>
+
+        <h2>7. 儿童隐私</h2>
+        <p>本扩展不面向 13 岁以下儿童，不会故意收集儿童的个人信息。</p>
+
+        <h2>8. 隐私权政策的变更</h2>
+        <p>
+            本隐私权政策可能会不时更新。如有重大变更，我们会在扩展的更新说明中通知您。
+        </p>
+
+        <h2>9. 联系方式</h2>
+        <p>
+            如果您对本隐私权政策有任何疑问，请通过以下方式联系我们：<br>
+            <a href="mailto:deepseekmate2026@163.com">deepseekmate2026@163.com</a>
+        </p>
+
+        <div class="footer">
+            <p>本扩展完全免费，不含任何第三方统计或广告 SDK。返回 <a href="index.html">帮助首页</a>。</p>
+        </div>
+    </div>
+</body>
+</html>

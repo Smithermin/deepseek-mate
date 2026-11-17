@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>常见问题 — DeepSeek Mate</title>
+<meta name="description" content="DeepSeek Mate 常见问题：数据是否上传、付费、同步条数、上限、记忆不生效、附件、压缩、账号风控等。">
+<link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html">
+      <img class="brand-mark" src="assets/logo.svg" alt="" width="26" height="26" decoding="async">
+      <span class="brand-name">DeepSeek <b>Mate</b></span>
+    </a>
+    <nav class="site-nav">
+      <a href="index.html">概览</a>
+      <a href="guide.html">使用说明</a>
+      <a href="faq.html" class="active">常见问题</a>
+      <a href="changelog.html">更新记录</a>
+      <a href="index.html#feedback">反馈</a>
+    </nav>
+    <a class="btn btn--primary btn--sm nav-cta"
+       href="https://microsoftedge.microsoft.com/addons/detail/deepseek-mate/obldeakoojcpjagdhpnipjaepcakjmec"
+       target="_blank" rel="noopener">安装扩展</a>
+  </div>
+</header>
+
+<main>
+
+  <div class="page-header">
+    <div class="wrap">
+      <h1>常见问题</h1>
+      <p>先看这里，绝大多数疑问都能解决。没找到答案就 <a href="index.html#feedback">反馈</a> 给我。</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="wrap narrow">
+
+      <div class="faq">
+
+        <details open>
+          <summary>我的对话数据会被上传吗？</summary>
+          <p>不会。收藏、记忆、提示词、历史索引都只存在你的浏览器本地，我们没有服务器也没有账号体系，
+          这个站点也没有任何统计脚本。唯一会外发的情况：你自己在设置里填了第三方/官方 API 来做记忆提取，
+          那时对话片段会发到<strong>你指定的</strong>那个接口。</p>
+        </details>
+
+        <details>
+          <summary>收藏和历史有数量上限吗？</summary>
+          <p>收藏 1000 条；本地历史索引 2000 条。都是本地存储的限制，超出时会优先淘汰最旧的记录，
+          并且会在设置页的状态里说明。</p>
+          <p>另外同步是<strong>分页</strong>的：DeepSeek 服务端每页给 100 条，扩展会自动翻页继续拉，
+          所以不会"只同步到 100 条"。</p>
+        </details>
+
+        <details>
+          <summary>记忆是什么时候生成的？为什么刚聊完的内容没进记忆库？</summary>
+          <p>记忆是<strong>异步</strong>生成的，分两步，都不是"边聊边立刻入库"：</p>
+          <p><strong>① 提炼</strong>：手动点 <code>⋯</code> →「记忆提取」，或开启「自动提取」
+          （默认关闭，在你空闲一段时间后才触发）。这一步本质是让模型把这段对话读一遍再给出结论，
+          要跑几秒到几十秒 —— 即使选了"自动"，也只是<strong>到点才发起</strong>，不是即时执行。</p>
+          <p><strong>② 写入</strong>：提炼返回之后，才会写进本机的记忆库。</p>
+          <p>所以刚聊完的内容不会马上出现在记忆里。另外「新对话自动带上记忆」带的是
+          <strong>记忆库里已有的</strong>记忆，不是当前这段对话的内容。想立刻看到效果，
+          就手动点一次「记忆提取」，等提示出现结果后再去记忆页看。</p>
+        </details>
+
+        <details>
+          <summary>记忆没有被带进新对话 / 提取好像没生效？</summary>
+          <p>按顺序看三处：① 功能选项里的「记忆功能」总开关；② 记忆设置里的「自动注入记忆」；
+          ③ 这条记忆是否在记忆库里（记忆页会标出「从未被带出」）。</p>
+          <p>另外网页通道的自动提取会受风控影响，需要稳定运行的话建议配置自己的 API。
+          手动提取失败时会有明确提示（不会静默）。</p>
+        </details>
+
+        <details>
+          <summary>分叉之后，新会话里怎么多出了几个文件？</summary>
+          <p>这是「附件边界」的问题：从一个非最后轮的回答处分支时，旧版本会把分支点之后那几轮上传的附件
+          也一起带过去。已在后续版本修复（只带分支点及之前用到的附件）。</p>
+        </details>
+
+        <details>
+          <summary>点了「会话压缩」，为什么没有新建会话？</summary>
+          <p>1.1.0 之前的版本有这个问题（判断"回复是否生成完"用错了依据），1.1.0 已修复。
+          如果你还遇到，请带上版本号和截图反馈。</p>
+        </details>
+
+        <details>
+          <summary>分叉/压缩之后，原会话去哪了？</summary>
+          <p>默认<strong>原样保留、不动</strong>。压缩时可选三种去向：不挪动 / 归入「临时会话」分组
+          （约 45 分钟后自动清理）/ 归入「归档」分组（保留）。分叉出来的新会话标题带「【分叉】」前缀。</p>
+        </details>
+
+        <details>
+          <summary>为什么分叉/压缩要等 10 秒才能再点？</summary>
+          <p>因为这些动作会真的在你账号里新建会话、发消息、改标题。连续快速操作最容易被判定为脚本行为，
+          所以我们加了流控：基础间隔 10 秒，连续操作自动拉长到 30 / 60 秒，同一个对话 60 秒内不能重复操作。
+          被拦下时提示会告诉你还要等几秒。</p>
+        </details>
+
+        <details>
+          <summary>配置了自定义 API 之后，是不是就完全不碰网页通道了？</summary>
+          <p>不是。<strong>「记忆提取」和「会话压缩的摘要」</strong>会改走你配的 API —— 这两段不走网页、
+          不进风控、也不产生临时会话。</p>
+          <p><strong>分叉</strong>本身不需要模型，但它要在你账号里建会话、发消息、改标题，所以只能走网页通道；
+          <strong>压缩</strong>最后"建会话 + 发消息 + 改名"也仍然是网页写操作（没配 API 时，摘要还会退回到
+          "在会话里就地提问"，那一次提问也走网页模型）。</p>
+          <p>所以配 API 能让最频繁的后台任务（提取）彻底安全；分叉 / 压缩仍受操作间隔保护，按需使用、别连续猛点。</p>
+          <p>另外：Base URL / API Key / 模型<strong>三项填全才会生效</strong>，填不全时会自动回落到网页通道。</p>
+        </details>
+
+      </div>
+
+      <p class="section-sub" style="margin-top:26px">
+        没找到答案？<a href="index.html#feedback">发邮件</a>，附上版本号和截图会快很多。
+      </p>
+
+      <div class="pager">
+        <a href="guide.html"><span class="label">上一篇</span>← 使用说明</a>
+        <a class="next" href="changelog.html"><span class="label">下一篇</span>更新记录 →</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-cols">
+      <div>
+        <a class="brand" href="index.html">
+          <img class="brand-mark" src="assets/logo.svg" alt="" width="26" height="26" decoding="async">
+          <span class="brand-name">DeepSeek <b>Mate</b></span>
+        </a>
+        <p class="muted">DeepSeek 网页版增强扩展。<br>数据全部保存在本机。</p>
+      </div>
+      <div>
+        <h4>支持</h4>
+        <ul>
+          <li><a href="guide.html">使用说明</a></li>
+          <li><a href="faq.html">常见问题</a></li>
+          <li><a href="changelog.html">更新记录</a></li>
+          <li><a href="index.html#feedback">问题反馈</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>链接</h4>
+        <ul>
+          <li><a href="https://microsoftedge.microsoft.com/addons/detail/deepseek-mate/obldeakoojcpjagdhpnipjaepcakjmec" target="_blank" rel="noopener">Edge 加载项</a></li>
+          <li><a href="privacy.html">隐私政策</a></li>
+          <li><a href="index.html#wechat">公众号</a></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+</body>
+</html>

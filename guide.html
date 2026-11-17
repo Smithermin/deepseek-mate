@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>使用说明 — DeepSeek Mate</title>
+<meta name="description" content="DeepSeek Mate 使用说明：打开侧边栏、历史搜索、收藏、提示词、长期记忆、会话分叉与压缩、数据管理。">
+<link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html">
+      <img class="brand-mark" src="assets/logo.svg" alt="" width="26" height="26" decoding="async">
+      <span class="brand-name">DeepSeek <b>Mate</b></span>
+    </a>
+    <nav class="site-nav">
+      <a href="index.html">概览</a>
+      <a href="guide.html" class="active">使用说明</a>
+      <a href="faq.html">常见问题</a>
+      <a href="changelog.html">更新记录</a>
+      <a href="index.html#feedback">反馈</a>
+    </nav>
+    <a class="btn btn--primary btn--sm nav-cta"
+       href="https://microsoftedge.microsoft.com/addons/detail/deepseek-mate/obldeakoojcpjagdhpnipjaepcakjmec"
+       target="_blank" rel="noopener">安装扩展</a>
+  </div>
+</header>
+
+<main>
+
+  <div class="page-header">
+    <div class="wrap">
+      <h1>使用说明</h1>
+      <p>从装好到用顺手，大概五分钟。下面 7 步按顺序做一遍就够了。</p>
+      <ul class="toc">
+        <li><a href="#step-1">1 · 打开侧边栏</a></li>
+        <li><a href="#step-2">2 · 历史搜索</a></li>
+        <li><a href="#step-3">3 · 收藏</a></li>
+        <li><a href="#step-4">4 · 提示词</a></li>
+        <li><a href="#step-5">5 · 长期记忆</a></li>
+        <li><a href="#step-6">6 · 分叉 / 压缩</a></li>
+        <li><a href="#step-7">7 · 管理数据</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="wrap narrow">
+      <ol class="steps">
+
+        <li class="step" id="step-1">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <h3>打开侧边栏</h3>
+            <p>装好后点浏览器工具栏上的图标，侧边栏就会打开。右上角 <code>☰</code> 是全部页面：
+            收藏列表 / 查找历史对话 / 提示词管理 / 记忆 / 设置 / 关于。</p>
+            <p class="callout">
+              侧边栏的宽度可以拖：把鼠标挪到它与页面之间的分隔线上，左右拖就行。
+            </p>
+          </div>
+        </li>
+
+        <li class="step" id="step-2">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <h3>打开历史搜索（首次会同步一次）</h3>
+            <p>设置 → 功能选项 → 打开「启用历史对话搜索功能」，然后到 <code>☰</code> →「查找历史对话」开始同步。
+            同步过程中就能搜，不用等它跑完；同步只读你的对话，不会改动任何东西。</p>
+            <figure class="shot shot--panel">
+              <img src="assets/shots/search.webp" width="900" height="900" loading="lazy" alt="历史搜索界面">
+              <figcaption>关键词命中会高亮，点一下跳回原对话</figcaption>
+            </figure>
+            <p>同步进度会写在设置页「历史对话同步」那一栏。本地索引上限 2000 条，原对话始终留在 DeepSeek。</p>
+          </div>
+        </li>
+
+        <li class="step" id="step-3">
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <h3>收藏好答案</h3>
+            <p>把鼠标移到任意一条回答上，动作栏里点 <strong>⭐</strong> 就收藏了这一条；
+            想收藏整段会话就在会话行 <code>⋯</code> →「收藏会话」。</p>
+            <figure class="shot shot--panel">
+              <img src="assets/shots/favorites.webp" width="900" height="932" loading="lazy" alt="收藏列表">
+              <figcaption>收藏列表：可导出 Markdown / 跳回原对话 / 生成分享链接</figcaption>
+            </figure>
+            <p>点开任意一条可以看全文；导出会给你一个 <code>.md</code> 文件，格式是干净的 Markdown。</p>
+          </div>
+        </li>
+
+        <li class="step" id="step-4">
+          <div class="step-num">4</div>
+          <div class="step-body">
+            <h3>配置常用提示词</h3>
+            <p><code>☰</code> →「提示词管理」里维护你的模板（自带 14 个常用模板，可以改也可以删）。
+            之后在 DeepSeek 输入框敲一个 <code>@</code>，浮层弹出、上下键选择、回车插入。</p>
+            <figure class="shot">
+              <img src="assets/shots/composer-at.webp" width="1200" height="668" loading="lazy" alt="@ 提示词浮层">
+              <figcaption>输入 <code>@</code> 唤起提示词，回车插入</figcaption>
+            </figure>
+          </div>
+        </li>
+
+        <li class="step" id="step-5">
+          <div class="step-num">5</div>
+          <div class="step-body">
+            <h3>打开长期记忆</h3>
+            <p>设置 → 功能选项 →「记忆功能」，再按需打开「自动注入记忆」。之后新对话的第一条消息会带上相关记忆，
+            并在气泡下方显示一个可折叠面板 —— <strong>点开就能看到这次到底带了哪几条</strong>。</p>
+            <figure class="shot">
+              <img src="assets/shots/memory-panel.webp" width="1400" height="549" loading="lazy" alt="记忆面板">
+              <figcaption>面板里逐条列出这次带入的记忆，可以核对</figcaption>
+            </figure>
+            <p>记忆都在 <code>☰</code> →「记忆」里管理：可以搜索、修改、置顶、删除，页面顶部还会显示
+            「已带出 N 条 / 从未被带出」。</p>
+            <p>从对话里提炼新的记忆用 <code>⋯</code> →「记忆提取」。默认走网页通道（等同你在页面里提问）；
+            <strong>推荐把它切到自己的 API</strong>，见下面。</p>
+
+            <div class="callout callout--rec">
+              <strong>强烈建议：把记忆提取切到自己的 API</strong>
+              <p>路径：设置 →「自定义 LLM API」→ 勾选「启用自定义 API」→ 填三项 → 点「保存 API 配置」。</p>
+              <ul class="ticks">
+                <li>DeepSeek 官方：Base URL <code>https://api.deepseek.com</code>、模型 <code>deepseek-chat</code>，
+                  API Key 在 <code>platform.deepseek.com</code> 创建（按量计费，很便宜）</li>
+                <li>切换之后：<strong>不走网页，也就不进 DeepSeek 官方风控</strong>，不产生临时会话，提取更稳定</li>
+                <li>Base URL / API Key / 模型<strong>三项填全才生效</strong>；填不全会自动回落到网页通道</li>
+                <li>生效范围：<strong>记忆提取</strong>和<strong>会话压缩的摘要</strong>。
+                  分叉 / 压缩最后那步仍要写你的账号（建会话、发消息），那部分无法用 API 替代</li>
+              </ul>
+            </div>
+
+            <p class="callout">
+              <strong>关于风控：</strong>网页通道的提取属于"自动替你发了一条消息"。所以我们默认关闭自动提取；
+              打开前会提示风险。要长期无人值守，建议配 API。
+            </p>
+          </div>
+        </li>
+
+        <li class="step" id="step-6">
+          <div class="step-num">6</div>
+          <div class="step-body">
+            <h3>分叉 / 压缩一段长对话</h3>
+            <p><strong>想从某一条回答那里另起一条线：</strong>鼠标移到那条回答 → 点「从这里继续」。
+            新会话会带着到那一轮为止的上下文继续，原会话不动。</p>
+            <p><strong>想整体换个干净会话继续：</strong>会话行 <code>⋯</code> →「会话压缩」，
+            它会先让模型写一份交接摘要（那一问一答会自动隐藏），再新建会话带上摘要 + 最近几轮原话。</p>
+            <figure class="shot">
+              <img src="assets/shots/menu.webp" width="1000" height="1119" loading="lazy" alt="⋯ 菜单里的扩展分组">
+              <figcaption>所有入口都收在 ⋯ 菜单的 DEEPSEEK MATE 分组里，悬停有说明</figcaption>
+            </figure>
+            <p>压缩完成后，原会话标题会加上「【压缩前】」，去向可以在设置里选：
+            <strong>不挪动</strong> / 进「临时会话」分组（约 45 分钟后自动清理）/ 进「归档」分组（保留）。</p>
+            <p class="callout">
+              <strong>小提示：</strong>为了不让你的 DeepSeek 账号被风控，分叉 / 压缩 / 记忆提取之间
+              有 10 秒基础间隔，连续操作会自动拉长到 30～60 秒，同一个对话 60 秒内不能重复操作。
+              被拦下时提示会告诉你还要等几秒 —— 等一下就好，别连点。
+            </p>
+          </div>
+        </li>
+
+        <li class="step" id="step-7">
+          <div class="step-num">7</div>
+          <div class="step-body">
+            <h3>管理和清理你的数据</h3>
+            <p>设置页最下面是「数据导出与清理」：能看到本机占用、导出备份、清空收藏或历史索引。
+            所有数据都在你的浏览器里，删掉就是真的删掉。</p>
+            <figure class="shot shot--panel">
+              <img src="assets/shots/settings.webp" width="900" height="964" loading="lazy" alt="设置页">
+              <figcaption>设置页：功能开关 / 记忆 / 分叉去向 / 同步 / 数据清理</figcaption>
+            </figure>
+            <p class="callout">
+              <strong>换 DeepSeek 账号时：</strong>本地数据是跟浏览器走的，不跟账号走。换号后建议先清空历史索引
+              和收藏，否则搜索里会混进上一个账号的对话（点进去会 404）。
+            </p>
+          </div>
+        </li>
+
+      </ol>
+
+      <div class="pager">
+        <a href="faq.html"><span class="label">下一篇</span>常见问题 →</a>
+        <a class="next" href="changelog.html"><span class="label">也可以看</span>更新记录 →</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-cols">
+      <div>
+        <a class="brand" href="index.html">
+          <img class="brand-mark" src="assets/logo.svg" alt="" width="26" height="26" decoding="async">
+          <span class="brand-name">DeepSeek <b>Mate</b></span>
+        </a>
+        <p class="muted">DeepSeek 网页版增强扩展。<br>数据全部保存在本机。</p>
+      </div>
+      <div>
+        <h4>支持</h4>
+        <ul>
+          <li><a href="guide.html">使用说明</a></li>
+          <li><a href="faq.html">常见问题</a></li>
+          <li><a href="changelog.html">更新记录</a></li>
+          <li><a href="index.html#feedback">问题反馈</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>链接</h4>
+        <ul>
+          <li><a href="https://microsoftedge.microsoft.com/addons/detail/deepseek-mate/obldeakoojcpjagdhpnipjaepcakjmec" target="_blank" rel="noopener">Edge 加载项</a></li>
+          <li><a href="privacy.html">隐私政策</a></li>
+          <li><a href="index.html#wechat">公众号</a></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+</body>
+</html>

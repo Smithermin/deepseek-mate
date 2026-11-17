@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DeepSeek Mate — 让 DeepSeek 记得住你、接得上长对话</title>
+<meta name="description" content="DeepSeek Mate 是 DeepSeek 网页版的增强扩展：长期记忆、会话分叉与压缩、本地全文搜索、提示词库。数据全部保存在本机。">
+<meta property="og:title" content="DeepSeek Mate — DeepSeek 网页版增强扩展">
+<meta property="og:description" content="长期记忆 · 会话分叉与压缩 · 本地全文搜索 · 提示词库。数据全部留在本机。">
+<meta property="og:image" content="assets/shots/hero.webp">
+<link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+<link rel="stylesheet" href="style.css">
+<!--
+  ============================================================
+  维护提示
+    · 反馈邮箱：deepseekmate2026@163.com（改邮箱时全站一起换）
+    · 隐私政策：privacy.html（就放在本站点里）
+    · 公众号二维码：assets/wechat-qr.png（同名覆盖即可）
+    · 头像：assets/avatar.png（同名覆盖，96×96）
+    · 「近千位用户」这类数字：发版时顺手核对
+  ============================================================
+-->
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html">
+      <img class="brand-mark" src="assets/logo.svg" alt="" width="26" height="26" decoding="async">
+      <span class="brand-name">DeepSeek <b>Mate</b></span>
+    </a>
+    <nav class="site-nav">
+      <a href="index.html" class="active">概览</a>
+      <a href="guide.html">使用说明</a>
+      <a href="faq.html">常见问题</a>
+      <a href="changelog.html">更新记录</a>
+      <a href="#feedback">反馈</a>
+    </nav>
+    <a class="btn btn--primary btn--sm nav-cta"
+       href="https://microsoftedge.microsoft.com/addons/detail/deepseek-mate/obldeakoojcpjagdhpnipjaepcakjmec"
+       target="_blank" rel="noopener">安装扩展</a>
+  </div>
+</header>
+
+<main>
+
+  <!-- ================= Hero ================= -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">DeepSeek 网页版 · 浏览器扩展</p>
+        <h1>让 DeepSeek 记得住你、<br class="br-desktop">接得上长对话</h1>
+        <p class="hero-sub">
+          长期记忆 · 会话分叉与压缩 · 本地全文搜索 · 提示词库。<br>
+          所有数据只存在你自己的浏览器里，没有账号、没有埋点。
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn--primary btn--lg"
+             href="https://microsoftedge.microsoft.com/addons/detail/deepseek-mate/obldeakoojcpjagdhpnipjaepcakjmec"
+             target="_blank" rel="noopener">安装到 Edge</a>
+          <a class="btn btn--lg" href="guide.html">先看使用说明</a>
+        </div>
+        <p class="social-proof">
+          <span class="stars" aria-hidden="true">★★★★★</span>
+          <b>4.9</b> 分 · 近千位用户在用 · 完全免费
+        </p>
+      </div>
+      <div class="hero-shot">
+        <img src="assets/shots/hero.webp" width="1280" height="800"
+             alt="DeepSeek Mate 的侧边栏与对话内记忆面板" fetchpriority="high">
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 为什么做（开发者的一封信） ================= -->
+  <section id="why" class="section section--alt">
+    <div class="wrap narrow">
+
+      <article class="letter">
+        <div class="letter-head">
+          <span class="avatar-wrap">
+            <img class="avatar" src="assets/avatar.png" width="48" height="48" alt=""
+                 onerror="this.parentNode.classList.add('no-img')">
+            <span class="avatar avatar--fallback" aria-hidden="true">S</span>
+          </span>
+          <div>
+            <strong>来自开发者</strong>
+            <span class="muted">一个每天用 DeepSeek 的人</span>
+          </div>
+        </div>
+
+        <div class="letter-body">
+          <p>
+            最开始用它的时候，我总觉得 DeepSeek 比豆包、Gemini 都"朴素"得多 ——
+            那时候它连<strong>搜索历史对话</strong>都没有，聊过的内容只能靠手动往下翻。
+          </p>
+          <p>
+            所以这个扩展的<strong>第一个功能就是历史搜索</strong>：把对话同步到本地，自己做全文检索。
+            后来 DeepSeek 自己补上了这个功能，但已经同步到本地的索引<strong>依然更快</strong>
+            （不用等服务端往返，而且边同步边就能搜），所以这个功能一直留着。
+          </p>
+          <p>
+            再往后就是一个个补实用的东西：收藏、提示词、长期记忆、会话分叉与压缩。
+            想法很简单 —— <strong>把每天都会重复的那几件事，变成一次点击</strong>。
+          </p>
+          <p>
+            有两条线我一直守着：<strong>能不碰你的账号就不碰</strong>（所有会写账号的动作都要你亲手点，
+            而且现在还有流控，防止手快点太快）；<strong>能不联网就不联网</strong>
+            （收藏、记忆、提示词、历史索引全在你本机，这个站点也没有任何统计脚本）。
+          </p>
+          <p class="letter-sign">—— 如果它帮你省了时间，欢迎在「关于」页请我喝杯咖啡 ☕</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ================= 功能 ================= -->
+  <section id="features" class="section">
+    <div class="wrap">
+      <h2 class="section-title center">它能帮你做什么</h2>
+      <p class="section-sub center">四个功能，对应四类具体麻烦。<a href="guide.html">看完整使用说明 →</a></p>
+
+      <!-- 1. 记忆 -->
+      <div class="feature-row">
+        <div class="feature-copy">
+          <span class="feature-kicker">01 · 长期记忆</span>
+          <h3>聊过一次，就不用再自我介绍</h3>
+          <p>
+            DeepSeek 会从对话里提炼关于你的长期信息 —— 身份、偏好、在做的事、技术栈 —— 存在本机。
+            新对话自动带上相关记忆，<strong>这次带了哪几条，在对话里可以直接展开核对</strong>，不是黑盒。
+          </p>
+          <ul class="ticks">
+            <li>记忆库按主题分类，可搜索、编辑、置顶、删除</li>
+            <li>会标出「哪些记忆真的被带出过」，避免攒一堆没人用的</li>
+            <li>想更稳可以让提取走你自己的 API（如 <code>api.deepseek.com</code>）</li>
+          </ul>
+        </div>
+        <figure class="shot">
+          <img src="assets/shots/memory-panel.webp" width="1400" height="549" loading="lazy"
+               alt="对话里显示的「已带入 3 条长期记忆」面板">
+          <figcaption>对话里的记忆面板：带了哪几条，一目了然</figcaption>
+        </figure>
+      </div>
+
+      <!-- 2. 分叉 / 压缩 -->
+      <div class="feature-row feature-row--flip">
+        <div class="feature-copy">
+          <span class="feature-kicker">02 · 会话分叉 / 压缩</span>
+          <h3>长对话断了，不用从头讲</h3>
+          <p>
+            上下文太长、或者想换条思路聊？<strong>分叉</strong>会把当前会话（或截到某一条回答）逐字带进新会话；
+            <strong>压缩</strong>则先让模型写一份交接摘要，再带着摘要和最近几轮原话开新会话。
+          </p>
+          <ul class="ticks">
+            <li>入口在回答旁的「从这里继续」，或会话行 <code>⋯</code> 菜单里的 DEEPSEEK MATE 分组</li>
+            <li>原会话默认<strong>原样保留</strong>；压缩后可选择不挪动 / 进临时分组 / 进归档分组</li>
+            <li>带附件的会话会把附件一并引用过去（只带分支点之前的）</li>
+          </ul>
+        </div>
+        <figure class="shot">
+          <img src="assets/shots/menu.webp" width="1000" height="1119" loading="lazy"
+               alt="会话行 ⋯ 菜单里的 DEEPSEEK MATE 分组">
+          <figcaption>扩展入口收在一个分组里，鼠标移上去有说明</figcaption>
+        </figure>
+      </div>
+
+      <!-- 3. 本地搜索 -->
+      <div class="feature-row">
+        <div class="feature-copy">
+          <span class="feature-kicker">03 · 本地全文搜索</span>
+          <h3>那个解决方案，一个词就翻出来</h3>
+          <p>
+            把 DeepSeek 的历史对话同步到浏览器本地，<strong>标题和正文一起搜</strong>，
+            输入即出结果，点一下直接跳回原会话。
+          </p>
+          <ul class="ticks">
+            <li>本地预建索引，<strong>不用等服务端搜索往返</strong>，边同步边就能搜</li>
+            <li>在 DeepSeek 里删掉会话，本地记录也会跟着消失，不留残影</li>
+            <li>正文只留在本机，不上传任何服务器</li>
+          </ul>
+        </div>
+        <figure class="shot shot--panel">
+          <img src="assets/shots/search.webp" width="900" height="900" loading="lazy"
+               alt="侧边栏的历史全文搜索，关键词高亮显示在结果里">
+          <figcaption>关键词命中会高亮，点一下跳回原对话</figcaption>
+        </figure>
+      </div>
+
+      <!-- 4. 收藏 + 提示词 -->
+      <div class="feature-row feature-row--flip">
+        <div class="feature-copy">
+          <span class="feature-kicker">04 · 收藏与提示词</span>
+          <h3>好答案留得住，常用话术不用重打</h3>
+          <p>
+            回答旁点 <strong>⭐</strong> 收藏这一条，或在 <code>⋯</code> 菜单收藏整段会话；
+            常用提示词存在本地，输入框里敲 <code>@</code> 就唤出来、回车插入。
+          </p>
+          <ul class="ticks">
+            <li>收藏支持导出 Markdown、跳回原对话、生成分享链接</li>
+            <li>提示词随时增删改，写周报、做代码审查这类模板一次配好</li>
+          </ul>
+        </div>
+        <div class="shot-pair">
+          <figure class="shot">
+            <img src="assets/shots/favorites.webp" width="900" height="932" loading="lazy"
+                 alt="侧边栏的收藏列表">
+            <figcaption>收藏列表</figcaption>
+          </figure>
+          <figure class="shot">
+            <img src="assets/shots/composer-at.webp" width="1200" height="668" loading="lazy"
+                 alt="在输入框敲 @ 唤出提示词浮层">
+            <figcaption>敲 <code>@</code> 插入提示词</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 反馈 ================= -->
+  <section id="feedback" class="section section--alt">
+    <div class="wrap">
+      <h2 class="section-title center">问题反馈</h2>
+      <p class="section-sub center">发邮件给我，我都会看。<strong>带版本号和截图的响应最快。</strong></p>
+
+      <article class="card">
+        <h3>✉️ 邮件</h3>
+        <p>遇到 bug、想提建议、或者只是不确定怎么用，都可以直接发邮件。</p>
+        <p><a class="btn btn--primary"
+              href="mailto:deepseekmate2026@163.com?subject=%5BDeepSeek%20Mate%5D%20%E9%97%AE%E9%A2%98%E5%8F%8D%E9%A6%88">发邮件给作者</a></p>
+        <p class="muted">deepseekmate2026@163.com</p>
+      </article>
+
+      <article class="card tips">
+        <h3>反馈时顺手带上这四样，能省一半来回</h3>
+        <ol>
+          <li><strong>扩展版本号</strong>：<code>edge://extensions</code> 里能看到</li>
+          <li><strong>浏览器</strong>：Edge / Chrome，大概版本号</li>
+          <li><strong>复现步骤</strong>：点哪里、看到什么、期望什么</li>
+          <li><strong>截图或报错文字</strong>：控制台报错尤其有用（F12 → Console）</li>
+        </ol>
+      </article>
+    </div>
+  </section>
+
+  <!-- ================= 公众号 + CTA ================= -->
+  <section id="wechat" class="section">
+    <div class="wrap">
+      <div class="card wechat">
+        <div>
+          <h3>关注公众号，第一时间收到版本更新</h3>
+          <p>新功能上线、DeepSeek 页面改版适配、使用技巧都会发在这里。也可以在公众号里直接留言。</p>
+          <p class="muted">二维码失效或打不开，发邮件告诉我一声。</p>
+        </div>
+        <figure class="qr">
+          <img src="assets/wechat-qr.png" alt="公众号二维码" width="200" height="200">
+          <figcaption>微信扫一扫</figcaption>
+        </figure>
+      </div>
+
+      <div class="cta-band">
+        <h2>现在装，下一次就不用再自我介绍</h2>
+        <p>免费、无需注册、数据只存在本机。</p>
+        <a class="btn btn--primary btn--lg"
+           href="https://microsoftedge.microsoft.com/addons/detail/deepseek-mate/obldeakoojcpjagdhpnipjaepcakjmec"
+           target="_blank" rel="noopener">安装到 Edge</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-cols">
+      <div>
+        <a class="brand" href="index.html">
+          <img class="brand-mark" src="assets/logo.svg" alt="" width="26" height="26" decoding="async">
+          <span class="brand-name">DeepSeek <b>Mate</b></span>
+        </a>
+        <p class="muted">DeepSeek 网页版增强扩展。<br>数据全部保存在本机。</p>
+      </div>
+      <div>
+        <h4>支持</h4>
+        <ul>
+          <li><a href="guide.html">使用说明</a></li>
+          <li><a href="faq.html">常见问题</a></li>
+          <li><a href="changelog.html">更新记录</a></li>
+          <li><a href="index.html#feedback">问题反馈</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>链接</h4>
+        <ul>
+          <li><a href="https://microsoftedge.microsoft.com/addons/detail/deepseek-mate/obldeakoojcpjagdhpnipjaepcakjmec" target="_blank" rel="noopener">Edge 加载项</a></li>
+          <li><a href="privacy.html">隐私政策</a></li>
+          <li><a href="index.html#wechat">公众号</a></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+</body>
+</html>
